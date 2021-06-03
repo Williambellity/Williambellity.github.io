@@ -4,7 +4,7 @@ function getParameterByName(name, url = window.location.href) {
     results = regex.exec(url);
   if (!results) return null;
   if (!results[2]) return "";
-  return decodeURIComponent(results[2].replace(/\+/g, " "));
+  return parseInt(decodeURIComponent(results[2].replace(/\+/g, " ")), 10);
 }
 const facebook = getParameterByName("facebook");
 const facebookTotal = getParameterByName("facebook") * 5 * 60;
@@ -32,7 +32,6 @@ document.getElementById("bereal").innerHTML = berealTotal;
 
 const tiktok = getParameterByName("tiktok");
 const tiktokTotal = getParameterByName("tiktok") * 30;
-
 document.getElementById("tiktok").innerHTML = tiktokTotal;
 
 const moyenne =
@@ -50,4 +49,4 @@ const moyenne =
     snapchat +
     bereal +
     tiktok);
-console.log(moyenne);
+document.getElementById("moyenne").innerHTML = moyenne;
