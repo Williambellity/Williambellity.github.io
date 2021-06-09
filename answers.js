@@ -49,4 +49,5 @@ const moyenne =
     snapchat +
     bereal +
     tiktok);
-document.getElementById("moyenne").innerHTML = moyenne;
+document.getElementById("moyenneh").innerHTML = (moyenne / 60).toFixed(0) - 1;
+document.getElementById("moyennem").innerHTML = (moyenne % 60).toFixed(0) - 1;
